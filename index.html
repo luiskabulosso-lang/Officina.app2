@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLINICA DA ISADORA</title>
+  <title>Agendamento de Oficina</title>
 
   <style>
     body {
@@ -66,12 +66,12 @@
 <body>
 
   <div class="card">
-    <h1>CLINICA DA ISADORA</h1>
+    <h1>Agendamento de Oficina</h1>
 
     <label>Nome do cliente</label>
     <input type="text" id="cliente" placeholder="Ex: João Silva" />
 
-    <label>Procedimento</label>
+    <label>Modelo do carro</label>
     <input type="text" id="carro" placeholder="Ex: Gol 1.6" />
 
     <div class="row">
@@ -117,7 +117,7 @@
         return;
       }
 
-      const numeroWhatsApp = "5599988050494"; // 🔴 TROQUE AQUI
+      const numeroWhatsApp = "559988050494"; // 🔴 TROQUE AQUI
 
       const mensagem =
         `🔧 *Novo Agendamento*%0A%0A` +
@@ -129,4 +129,9 @@
         `✅ Total: R$ ${total.toFixed(2)}`;
 
       const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
-      window.open(url, '_blan_
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
