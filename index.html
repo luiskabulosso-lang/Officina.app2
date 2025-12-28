@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora e Agendamento - Oficina</title>
+  <title>CLINICA DA ISADORA</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -50,7 +51,7 @@
     button {
       width: 100%;
       padding: 12px;
-      background: #2563eb;
+      background: #25D366;
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -58,19 +59,19 @@
       cursor: pointer;
     }
     button:hover {
-      background: #1e40af;
+      background: #1ebe5d;
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <h1>Agendamento de Oficina</h1>
+    <h1>CLINICA DA ISADORA</h1>
 
     <label>Nome do cliente</label>
     <input type="text" id="cliente" placeholder="Ex: João Silva" />
 
-    <label>Modelo do carro</label>
+    <label>Procedimento</label>
     <input type="text" id="carro" placeholder="Ex: Gol 1.6" />
 
     <div class="row">
@@ -89,7 +90,7 @@
     <label>Data do serviço</label>
     <input type="date" id="data" />
 
-    <button onclick="confirmar()">Confirmar Agendamento</button>
+    <button onclick="confirmar()">Enviar para WhatsApp</button>
   </div>
 
   <script>
@@ -107,20 +108,25 @@
       const cliente = document.getElementById('cliente').value;
       const carro = document.getElementById('carro').value;
       const data = document.getElementById('data').value;
+      const mao = document.getElementById('maoDeObra').value;
+      const pecas = document.getElementById('pecas').value;
+      const total = Number(mao) + Number(pecas);
 
       if (!cliente || !carro || !data) {
         alert('Preencha todos os campos!');
         return;
       }
 
-      alert(
-        "Agendamento confirmado!\\n" +
-        "Cliente: " + cliente + "\\n" +
-        "Carro: " + carro + "\\n" +
-        "Data: " + data
-      );
-    }
-  </script>
+      const numeroWhatsApp = "99988050494"; // 🔴 TROQUE AQUI
 
-</body>
-</html>
+      const mensagem =
+        `🔧 *Novo Agendamento*%0A%0A` +
+        `👤 Cliente: ${cliente}%0A` +
+        `🚗 Veículo: ${carro}%0A` +
+        `📅 Data: ${data}%0A` +
+        `💰 Mão de obra: R$ ${mao}%0A` +
+        `🧩 Peças: R$ ${pecas}%0A` +
+        `✅ Total: R$ ${total.toFixed(2)}`;
+
+      const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+      window.open(url, '_blan_
